@@ -15,9 +15,8 @@ const actions = {
     const response = await api.fetchImages(token);
     commit('setImages', response.data.data);
   },
-  async uploadImages({ rootState, commit }, images) {
-    console.log(commit);
-    console.log(images);
+
+  async uploadImages({ rootState }, images) {
     // Get the access token
     const { token } = rootState.auth;
 
@@ -25,7 +24,7 @@ const actions = {
     await api.uploadImages(images, token);
 
     // Redirect our user to ImageList component
-    await router.push('/');
+    await router.push('/').catch(console.log);
   }
 };
 

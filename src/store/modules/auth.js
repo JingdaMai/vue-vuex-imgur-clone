@@ -18,7 +18,7 @@ const actions = {
     const queryObject = qs.parse(hash.replace('#', ''));
     commit('setToken', queryObject.access_token);
     window.localStorage.setItem('imgur_token', queryObject.access_token);
-    router.push('/');
+    router.push('/').catch(console.log);
   },
   logout({ commit }) {
     commit('setToken', null);
