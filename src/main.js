@@ -10,7 +10,6 @@ Vue.use(VueRouter);
 
 export const router = new VueRouter({
   mode: 'history',
-  base: '/vue-vuex-vue_router-imgur-clone/',
   routes: [
     {
       path: '/',
