@@ -12,7 +12,7 @@ export default {
       response_type: 'token'
     };
     // window.location = `${ROOT_URL}/oauth2/authorize?${qs.stringify(queryString)}`;
-    router.push('${ROOT_URL}/oauth2/authorize?${qs.stringify(queryString)}').catch(console.log);
+    router.push(`${ROOT_URL}/oauth2/authorize?${qs.stringify(queryString)}`).catch(console.log);
   },
   fetchImages(token) {
     return axios.get(`${ROOT_URL}/3/account/me/images`, {
