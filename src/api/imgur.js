@@ -1,12 +1,11 @@
 import axios from 'axios';
 
-const CLIENT_ID = 'edd891bfe4bf3ca';
 const ROOT_URL = 'https://api.imgur.com';
 
 export default {
   login() {
     const queryString = {
-      client_id: CLIENT_ID,
+      client_id: 'edd891bfe4bf3ca',
       response_type: 'token'
     };
 
