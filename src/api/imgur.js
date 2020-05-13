@@ -1,5 +1,6 @@
 import qs from 'qs';
 import axios from 'axios';
+import { router } from '../../main';
 
 const CLIENT_ID = 'edd891bfe4bf3ca';
 const ROOT_URL = 'https://api.imgur.com';
@@ -10,7 +11,8 @@ export default {
       client_id: CLIENT_ID,
       response_type: 'token'
     };
-    window.location = `${ROOT_URL}/oauth2/authorize?${qs.stringify(queryString)}`;
+    // window.location = `${ROOT_URL}/oauth2/authorize?${qs.stringify(queryString)}`;
+    router.push('${ROOT_URL}/oauth2/authorize?${qs.stringify(queryString)}').catch(console.log);
   },
   fetchImages(token) {
     return axios.get(`${ROOT_URL}/3/account/me/images`, {
