@@ -4,16 +4,7 @@ const ROOT_URL = 'https://api.imgur.com';
 
 export default {
   login() {
-    const queryString = {
-      client_id: 'edd891bfe4bf3ca',
-      response_type: 'token'
-    };
-
-    const data = Object.entries(queryString)
-        .map(([key, val]) => `${key}=${encodeURIComponent(val)}`)
-        .join('&');
-
-    window.location = `${ROOT_URL}/oauth2/authorize?${data}`;
+    window.location = `${ROOT_URL}/oauth2/authorize?response_type=token&client_id=edd891bfe4bf3ca`;
   },
   fetchImages(token) {
     return axios.get(`${ROOT_URL}/3/account/me/images`, {
